@@ -49,7 +49,7 @@ It will be necessary to provide an AppID, identified by the ```-a``` flag and, o
 The usage would be basically:
 ```python -u main.py -s -a XXX -q SSSS```
 
-#### Exemplo:
+#### Example:
 ``` 
 python -u main.py -s -a 730 -q AK-47
 python -u main.py -s -a 570
