@@ -55,6 +55,8 @@ python -u main.py -s -a 730 -q AK-47
 python -u main.py -s -a 570
 ```
 
+The stored data will follow this <a href="https://github.com/Revadike/InternalSteamWebAPI/wiki/Search-Market">structure</a>, since its a RAW extraction.
+
 If main.py is executed within the project folder, manually, the data will be stored in the ```data``` folder partitioned by AppID.
 
 <br/>
