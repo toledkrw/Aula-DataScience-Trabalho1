@@ -2,10 +2,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Arquivo Atual",
+            "name": "Python: DataExtractionProcess",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/main.py",
+            "program": "${workspaceFolder}/Data Extraction Process/main.py",
             "console": "integratedTerminal",
             "justMyCode": true,
             "args": [
