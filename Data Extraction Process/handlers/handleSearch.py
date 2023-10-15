@@ -13,7 +13,7 @@ def handleSearch(app_id, query):
             if(data == None):
                 raise Exception("Data is empty!")
             else:
-                path = "data/" + str(app_id) 
+                path = "../DATA/RAW/" + str(app_id) 
 
                 file_name = str(datetime.now())
                 file_name = file_name.replace(" ", "_").replace(".",":").replace(":","-") + ".json" 

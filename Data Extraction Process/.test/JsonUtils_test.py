@@ -1,13 +1,13 @@
 import unittest, sys, os, shutil
 sys.path.append(os.getcwd())
 
-from utils.PathUtils import PathUtils
+from utils.JsonUtils import JsonUtils
 
 
 class tests(unittest.TestCase):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.path = "data/test"
+        self.path = "../DATA/test"
 
 
     def cleanUp(self):
@@ -16,27 +16,25 @@ class tests(unittest.TestCase):
 
         shutil.rmtree(self.path)
 
+    def createPath(self):
+        if (not os.path.exists(self.path)):
+            os.makedirs(self.path)
+
 
     def setUp(self):
-        self.cleanUp()
+        self.createPath()
 
     def tearDown(self):
         self.cleanUp()
+        
 
-    
-    def test_checkPath(self):
-        self.assertFalse(PathUtils.checkPath(self.path))
+    def test_writeJson(self):
+        test_data = {"test": "test"}
         
-        os.makedirs(self.path)
+        JsonUtils.writeJson(test_data, self.path + "/test.json")
         
-        self.assertTrue(PathUtils.checkPath(self.path))
-
-    def test_createPath(self):
-        self.assertFalse(PathUtils.checkPath(self.path))
-        
-        PathUtils.createPath(self.path)
-        
-        self.assertTrue(PathUtils.checkPath(self.path))
+        file = os.listdir(self.path)
+        self.assertEqual(len(file), 1)
         
         
 
