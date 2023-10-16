@@ -5,11 +5,11 @@
             "name": "Python: DataExtractionProcess",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/Data Extraction Process/main.py",
+            "program": "${workspaceFolder}/main.py",
             "console": "integratedTerminal",
             "justMyCode": true,
             "args": [
-                "-s",
+                "-e",
                 "-a",
                     "730",
                 "-q",
