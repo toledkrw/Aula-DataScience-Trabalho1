@@ -5,8 +5,8 @@ def handleExtraction(app_id, query):
         try:
             from datetime import datetime
             from DataExtractionProcess.market import search
-            from DataExtractionProcess.utils.JsonUtils import JsonUtils
-            from DataExtractionProcess.utils.PathUtils import PathUtils
+            from utils.JsonUtils import JsonUtils
+            from utils.PathUtils import PathUtils
 
             data = search.search_market_items(app_id, query)
             
