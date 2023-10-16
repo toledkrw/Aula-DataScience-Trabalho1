@@ -1,6 +1,6 @@
 def handleExtraction(app_id, query):
-    if(app_id == None):
-        raise Exception("App ID is None")
+    if(app_id == 'None'):
+        raise Exception("App ID cannot be None")
     else:
         try:
             from datetime import datetime
