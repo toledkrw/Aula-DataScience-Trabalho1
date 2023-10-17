@@ -7,7 +7,7 @@ from utils.PathUtils import PathUtils
 class tests(unittest.TestCase):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.path = "../DATA/test"
+        self.path = "./DATA/test"
 
 
     def cleanUp(self):
@@ -37,6 +37,13 @@ class tests(unittest.TestCase):
         PathUtils.createPath(self.path)
         
         self.assertTrue(PathUtils.checkPath(self.path))
+
+    def test_listContent(self):
+        self.assertFalse(PathUtils.checkPath(self.path))
+        
+        PathUtils.createPath(self.path)
+
+        self.assertTrue(PathUtils.listContent(self.path))
         
         
 
