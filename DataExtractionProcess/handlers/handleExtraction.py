@@ -1,19 +1,23 @@
+from datetime import datetime
+import os
+
+from DataExtractionProcess.market import search
+
+from utils.JsonUtils import JsonUtils
+from utils.PathUtils import PathUtils
+
+
 def handleExtraction(app_id, query):
     if(app_id == 'None'):
         raise Exception("App ID cannot be None")
     else:
         try:
-            from datetime import datetime
-            from DataExtractionProcess.market import search
-            from utils.JsonUtils import JsonUtils
-            from utils.PathUtils import PathUtils
-
             data = search.search_market_items(app_id, query)
             
             if(data == None):
                 raise Exception("Data is empty!")
             else:
-                path = "./DATA/RAW/" + str(app_id) 
+                path = os.getcwd() + "/DATA/RAW/" + str(app_id) 
 
                 file_name = str(datetime.now())
                 file_name = file_name.replace(" ", "_").replace(".",":").replace(":","-") + ".json" 
