@@ -1,12 +1,10 @@
-import os, sys
-
 from utils.CheckpointUtils import CheckpointUtils
 from utils.JsonUtils import JsonUtils
 from utils.PathUtils import PathUtils
 
-from handleFileEnrichment import handleFileEnrichment
-from handleFolderSearch import handleFolderSearch
-from handleFileSearch import handleFileSearch
+from DataPreProcessing.handlers.handleFileEnrichment import handleFileEnrichment
+from DataPreProcessing.handlers.handleFolderSearch import handleFolderSearch
+from DataPreProcessing.handlers.handleFileSearch import handleFileSearch
 
 def saveFile(file:dict, folder:str, old_file_name:str) -> None:
     current_folder = folder.split("/")[-1]
@@ -52,5 +50,3 @@ def handleProcess():
         None
     finally:
         None
-
-handleProcess()
