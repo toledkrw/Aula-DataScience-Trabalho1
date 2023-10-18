@@ -43,21 +43,40 @@ The application has the following functionality:
 
 
 ### 🛠️ Search and Extract Data
-By running the process with the ```-s``` flag you run the program in a way that searches for data on the Steam market through the WEB API.
+By running the process with the ```-e``` flag you run the program in a way that searches for data on the Steam market through the WEB API.
 It will be necessary to provide an AppID, identified by the ```-a``` flag and, optionally, a search string, if you want to search for specific items, identified by the ```-q``` flag.
 
 The usage would be basically:
-```python -u main.py -s -a XXX -q SSSS```
+```python -u main.py -e -a XXX -q SSSS```
 
 #### Example:
 ``` 
-python -u main.py -s -a 730 -q AK-47
-python -u main.py -s -a 570
+python -u main.py -e -a 730 -q AK-47
+python -u main.py -e -a 570
 ```
 
 The stored data will follow this <a href="https://github.com/Revadike/InternalSteamWebAPI/wiki/Search-Market">structure</a>, since its a RAW extraction.
 
 If main.py is executed within the project folder, manually, the data will be stored in the ```data``` folder partitioned by AppID.
+
+### 🧶Data Pre Processing
+By running the process with the ```-p``` flag you run the program in a way it pre-process and enriches previous extracted data.
+
+#### Example:
+```
+python -u main.py -p
+```
+It will, currently, only enrich the data with a timestamp.
+
+### 💎 Data Refinement
+By running the process with the ```-r``` flag you run the program in a way it refines the previous pre-processed data.
+The process with rename and drop some data fields, but will still store them as json batches for each planned table.
+
+#### Example:
+```
+python -u main.py -e
+```
+
 
 <br/>
 
@@ -68,8 +87,11 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <br/>
 
 ## 🧻 TODOs
-- [ ] Add functionality to save data from the project folder, not from the execution environment
+- [X] Add functionality to save data from the project folder, not from the execution environment
 - [ ] Add optional parameterization for pagination size of the search module (default is set to 100)
+- [X] Add TRUSTED layer process
+- [X] Add REFINED layer process
+- [ ] Add STORED layer process
 
 <!-- ASSETS -->
 
