@@ -2,6 +2,7 @@ import argparse
 
 from DataExtractionProcess.handlers import handleExtraction
 from DataPreProcessing.handlers import handleProcess
+from DataRefinementProcess.handlers import handleRefinement
 
 parser = argparse.ArgumentParser()
 
@@ -11,13 +12,13 @@ parser.add_argument("-q", "--query", help="Query String: What are you looking fo
 
 parser.add_argument("-p", "--process", help="Pre Process the data extracted", action="store_true", required=False)
 
-# parser.add_argument("-r", "--refine", help="Refine the data extracted", action="store_true", required=False)
+parser.add_argument("-r", "--refine", help="Refine the data extracted", action="store_true", required=False)
 
 args = parser.parse_args()
 
 extract = args.extract
 process = args.process
-# refine = args.refine
+refine = args.refine
 
 app_id = str(args.appId)
 query = str(args.query).replace("\"", "").replace("\'", "")
@@ -29,5 +30,5 @@ if(extract):
 if(process):
     handleProcess.handleProcess()
 
-# if(refine):
-#     handleRefine.handleRefine()
+if(refine):
+    handleRefinement.handleRefinement()
