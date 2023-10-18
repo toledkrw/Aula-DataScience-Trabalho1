@@ -34,6 +34,17 @@
                 "-q",
                 " "
             ]
-        }
+        },
+        {
+            "name": "Python: DataRefinementProcess",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "-r"
+            ]
+        },
     ]
 }

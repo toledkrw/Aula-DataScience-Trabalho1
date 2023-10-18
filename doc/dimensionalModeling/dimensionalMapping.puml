@@ -1,0 +1,34 @@
+@startyaml
+/'
+This file can be seen as a diagram using PUML -> https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml
+'/
+!theme black-knight
+f_item:
+  columns:
+    name: item name /'must come from hash_name'/
+    sell_listings: amount of this item on sale
+    sell_price: selling price (market price) /'must come from sell_price_text. WATCH OUT FOR 'USD' ON IT'/
+    sale_price: sale price (what seller receives) /'must come from sake_price_text. WATCH OUT FOR 'USD' ON IT'/
+    asset_desc: /'must extract from this inner dict'/
+      - app_id: app ID
+      - item_type: item type
+      - currency: currency
+      - tradable: is tradable
+    ingestion_date: timestamp of data collection
+
+f_market:
+  column:
+    app_id: app ID
+    total_count: total number of items on sale
+    ingestion_date: timestamp of data collection
+
+d_apps:
+  columns:
+    app_id: app ID
+    app_name: app name
+
+d_currency:
+  columns:
+    currency: currency
+    currency_name: currency name
+@endyaml
