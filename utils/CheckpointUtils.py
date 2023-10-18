@@ -23,6 +23,9 @@ class CheckpointUtils():
         path = __class__.self_path + "/" + layer + "/checkpoint.json"
         
         if(not PathUtils.checkFile(path)):
+            if(not PathUtils.checkFolder(__class__.self_path + "/" + layer)):
+                PathUtils.createPath(__class__.self_path + "/" + layer)
+
             checkpoint = [{"folder": folder, "lastFile": lastFile}]
             with open(path, 'w') as f:
                 json.dump(checkpoint, f)
