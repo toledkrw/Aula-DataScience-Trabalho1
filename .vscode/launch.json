@@ -46,5 +46,16 @@
                 "-r"
             ]
         },
+        {
+            "name": "Python: DataStoring",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "-M"
+            ]
+        },
     ]
 }

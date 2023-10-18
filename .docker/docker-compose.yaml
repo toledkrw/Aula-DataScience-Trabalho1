@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql
+    restart: always
+    # networks:
+    #   - shared_network
+    environment:
+      MYSQL_ROOT_PASSWORD: batata
+    volumes:
+      - ./data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+# networks:
+#   shared_network:
+#     external: true
